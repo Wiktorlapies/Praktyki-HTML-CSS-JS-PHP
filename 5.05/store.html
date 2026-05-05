@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Księgarnia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head-container">
+        <header class="page_title">
+            Księgarnia
+        </header>
+        <nav>
+            <a href="index.html">Dostępne książki </a>
+            <a href="add_book.html">Dodaj książkę </a>
+            <a href="store.html">Magazyn</a>
+        </nav>
+        <header class="subpage_title">Magazyn</header>
+    </div>
+    <main>
+        <div id="store_container">
+            <table id="store">
+                <tr>
+                    <th id="store_header" colspan="4">Stan magazynu na dzień: </th>
+                </tr>
+                <tr>
+                    <th id="bookIdColumn">ID</th>
+                    <th id="bookTitleColumn">Tytuł</th>
+                    <th id="bookIsbnColumn">ISBN</th>
+                    <th id="bookAmountColumn">Ilość</th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Pro ASP.NET Web API Security</td>
+                    <td>978-1-4302-5782-0</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Raspberry Pi IoT Projects</td>
+                    <td>978-1-484213-78-0</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Lynn Beighley</td>
+                    <td>978-0-596-52684-9</td>
+                    <td>54</td>
+                </tr>
+            </table>
+            <div id="store_operations">
+                <button id="updateStoreButton" onclick="window.location.reload()">Aktualizuj</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
