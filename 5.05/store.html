@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <title>Księgarnia</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="head-container">
-        <header class="page_title">
+        <h2 class="page_title">
             Księgarnia
-        </header>
+        </h2>
         <nav>
             <a href="index.html">Dostępne książki </a>
             <a href="add_book.html">Dodaj książkę </a>
             <a href="store.html">Magazyn</a>
         </nav>
-        <header class="subpage_title">Magazyn</header>
+        <h2 class="subpage_title">Magazyn</h2>
     </div>
     <main>
-        <div id="store_container">
-            <table id="store">
+        <div class="store_container">
+            <table class="store">
                 <tr>
-                    <th id="store_header" colspan="4">Stan magazynu na dzień: </th>
+                    <th class="store_header" colspan="4">Stan magazynu na dzień: <span id="currentDate"></span></th>
                 </tr>
                 <tr>
-                    <th id="bookIdColumn">ID</th>
-                    <th id="bookTitleColumn">Tytuł</th>
-                    <th id="bookIsbnColumn">ISBN</th>
-                    <th id="bookAmountColumn">Ilość</th>
+                    <th class="bookIdColumn">ID</th>
+                    <th class="bookTitleColumn">Tytuł</th>
+                    <th class="bookIsbnColumn">ISBN</th>
+                    <th class="bookAmountColumn">Ilość</th>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -48,11 +49,14 @@
                     <td>54</td>
                 </tr>
             </table>
-            <div id="store_operations">
-                <button id="updateStoreButton" onclick="window.location.reload()">Aktualizuj</button>
+            <div class="store_operations">
+                <button class="updateStoreButton operation-button" onclick="window.location.reload()">Aktualizuj</button>
             </div>
         </div>
     </main>
-    <script src="script.js"></script>
+    
+    <script>
+        document.getElementById("currentDate").textContent = getCurrentDate();
+    </script>
 </body>
 </html>

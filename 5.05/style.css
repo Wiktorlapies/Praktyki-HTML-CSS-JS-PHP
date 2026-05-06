@@ -2,27 +2,52 @@
     font-family: Arial, Helvetica, sans-serif;
     
 }
+
+:root{
+    --dark-bg-color: rgb(94, 156, 185);
+    --article-bg-color: rgb(18, 216, 216);
+    --header-bg-color: rgb(187, 152, 196);
+    --light-bg-color: rgb(212, 230, 247);
+    --main-button-color: rgb(114, 119, 126);
+    --main-button-border: solid 1.5px rgb(56, 55, 55);
+    --thick-light-border: 5px solid aqua;
+    --thin-light-border: 2px solid aqua;
+    --main-box-shadow: 0px 1px 15px rgb(179, 170, 170)
+}
+
 body{
     margin: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-color: rgb(212, 230, 247);
+    background-color: var(--light-bg-color);
     
     
 }
+
 .head-container{
     position: sticky;
     top: 0;
     box-shadow: 5px 0 15px dimgray;
     
 }
+
 header{
     padding: 10px;
     text-align: center;
-    background-color: rgb(187, 152, 196);
+    background-color: var(--header-bg-color);
     font-weight: 600;
 }
+
+h2{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--header-bg-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 .page_title{
     font-size: 1.5rem;
 }
@@ -31,50 +56,57 @@ nav{
     padding: 10px;
     display: flex;
     justify-content: center;
-    background-color: rgb(94, 156, 185);
+    background-color: var(--dark-bg-color);
     
 }
+
 nav a{
     color: rgb(233, 225, 212);
     text-decoration: none;
     margin-left: 3px;
     margin-right: 3px;
-    background-color: rgb(114, 119, 126);
+    background-color: var(--main-button-color);
     width: 200px;
     text-align: center;
     padding: 5px;
-    border: solid 1.5px rgb(56, 55, 55);
+    border: var(--main-button-border);
     transition: ease .5s;
 }
+
 nav a:hover{
     box-shadow: 5px 0px 10px dimgray;
 }
+
 main{
     background-color: rgb(212, 230, 247);
 }
+
 main header{
     font-size: 1rem;
     height: 100%;
 }
-#books{
+
+.books{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   
 }
+
 .book_product{
     display: flex;
     width: 600px;
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-    background-color: rgb(18, 216, 216);
+    background-color: var(--article-bg-color);
     padding: 50px;
     border-radius: 10px;
-    border: 5px solid aqua;
-    box-shadow: 0px 1px 15px rgb(179, 170, 170);
+    border: var(--thick-light-border);
+    box-shadow: var(--main-box-shadow);
 }
+
 .book_product img{
     
     width: 150px;
@@ -82,14 +114,17 @@ main header{
     border: 3px solid white;
 
 }
+
 .book_data{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    box-shadow: 5px 5px 15px dimgray;
+    box-shadow: var(--main-box-shadow);
     width: 50%;
     border-radius: 15px;
+    border: var(--thin-light-border);
 }
+
 .book_title{
     box-sizing: border-box;
     border-radius: 15px 15px 0 0;
@@ -99,6 +134,7 @@ main header{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .book_data p{
     margin-left: 10px;
     width: 75%;
@@ -108,21 +144,25 @@ main header{
     
 
 }
+
 .details_link a{
     width: 50%;
     display: block;
     text-decoration: none;
     transition: ease .5s;
     padding: 8px;
-    background-color: rgb(114, 119, 126);
+    background-color: var(--main-button-color);
     color: white;
+    border: var(--main-button-border);
     border-radius: 5px;
     
 }
+
 .details_link a:hover{
-    margin-left: 20px;
+    margin-left: 10px;
     font-weight: 500;
-    border-left: solid 5px white;  
+    border-left-width: 5px;
+    border-left-color: white;  
     
 }
 
@@ -132,18 +172,24 @@ main header{
 
 
 form{
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
 }
-#inputs{
+
+.book_data_inputs{
     box-sizing: border-box;
     padding: 10px;
     width: 400px;
-    background-color: azure;
-    margin-bottom: 50px;
+    background-color: var(--article-bg-color);
+    margin-bottom: 25px;
     border-radius: 15px;
-    box-shadow: 0 3px 15px dimgray;
+    box-shadow: var(--main-box-shadow);
+    border: var(--thick-light-border);
 }
-#inputs label{
+
+.book_data_inputs label{
     padding: 10px;
     width: 20%;
     display: inline-block;   
@@ -151,14 +197,20 @@ form{
     margin: 10px;
     font-weight:bolder;
 }
-#inputs input{
+
+.book_data_inputs input{
+    background-color: var(--light-bg-color);
     box-sizing: border-box;
     width: 50%;
     height: 2rem;
     padding-left: 10px;
     border-left-width: 4px;
 }
+.book_data_inputs input:focus{
+    box-shadow: var(--main-box-shadow);
+}
 textarea{
+    background-color: var(--light-bg-color);
     box-sizing: border-box;
     resize: none;
     width: 50%;
@@ -170,31 +222,34 @@ textarea{
     border-left-width: 4px;
     border-color: black;
 }
-#operations{
+
+.operations{
     width: 400px;
     display: flex;
     justify-content: space-around;
 }
-#operations input{
+
+.operation-button{
 
     width: 30%;
     height: 2rem;
-    background-color: rgb(114, 119, 126);
+    background-color: var(--main-button-color);
     color: white;
-    border: 1px rgb(59, 59, 59) solid;
+    border: var(--main-button-border);
     transition: .5s ease;
     border-radius: 5px;
     font-size: 15px;
     font-variant: small-caps;
 }
-#operations input[type='submit']{
+
+.operations input[type='submit']{
     background-color: rgb(43, 77, 43);
-    border-color: rgb(27, 129, 27);
 }
-#operations input:hover{
+
+/* .operations input:hover{
     box-shadow: 0 5px 10px rgb(116, 141, 141);
     scale: .99;
-}
+} */
 
 
 /* details.html */
@@ -205,19 +260,21 @@ textarea{
     display: flex;
     justify-content: center;
 }
+
 .book_details{
+    position: fixed;
     display: flex;
     width: 1000px;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
-    background-color: rgb(18, 216, 216);
-    padding: 50px;
+    background-color: var(--article-bg-color);
+    padding: 60px 50px 60px 50px;
     border-radius: 10px;
-    border: 5px solid aqua;
-    box-shadow: 0px 1px 15px rgb(179, 170, 170);
+    border: var(--thick-light-border);
+    box-shadow: var(--main-box-shadow);
 
 }
+
 .book_details img{
     height: 450px;
     width: 350px;
@@ -231,82 +288,134 @@ textarea{
     box-sizing: border-box;
     width: 100%;
     border-radius: 0 0 15px 15px;
-    overflow: auto;
+    overflow: wrap;
+    padding: 10px;
 }
+
 .detailed_data p{
-    margin-left: 10px;
-    width: 75%;
-    
+    width: 100%;
 }
+
 .data_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    box-shadow: 5px 5px 15px dimgray;
+    box-shadow: var(--main-box-shadow);
     border-radius: 15px;
+    border: var(--thin-light-border);
 }
+
 .data_container .book_data{
     width: 100%;
     border-radius: 15px 15px 0 0;
     box-shadow: none;
-    border: 1px black solid;
+    border: none;
 }
+
 p.description{
+    box-sizing: border-box;
     text-align: justify;
-    text-wrap-style:stable;
+    overflow-wrap: break-word;
 }
 
 
 /* store.html */
-#store_container{
+.store_container{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
 }
-#store{
-
+.store{
+    background-color: var(--article-bg-color);
+    border: var(--thick-light-border);
     width: 800px;
+    box-shadow: var(--main-box-shadow);
+    border-radius: 10px;
 }
-#store td,th{
-    border: 1px solid black;
+.store td,th{
+    border: var(--thin-light-border);
+    border-radius: 10px;
     height: 2rem;
 }
+.store th{
+    background-color: var(--header-bg-color);
+}
 
-#bookIdColumn{
+.bookIdColumn{
     width: 10%;
     text-align: center;
 }
-#bookTitleColumn{
+
+.bookTitleColumn{
     width: 60%;
     text-align: center;
 }
-#bookIsbnColumn{
+
+.bookIsbnColumn{
     width: 20%;
     text-align: center;
 }
-#bookAmountColumn{
+
+.bookAmountColumn{
     width: 10%;
     text-align: center;
 }
-#store_operations{
+
+.store_operations{
 
     display: flex;
     justify-content: flex-end;
     width: 800px;
     margin-top: 20px;
 }
-#updateStoreButton{
+
+/* .updateStoreButton{
     width: 10%;
     height: 1.5rem;
-    background-color: rgb(114, 119, 126);
+    background-color: var(--primary-button-color);
     color: rgb(233, 225, 212);
     border: none;
     transition: .25s ease;
-}
-#updateStoreButton:hover{
+} */
+/* .updateStoreButton:hover{
     scale: 1.02;
+} */
+
+.operation-button:hover{
+    box-shadow: 0 5px 10px rgb(116, 141, 141);
+    scale: .95;
+}
+
+.come-back-button{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: block;
+    font-size: 3rem;
+    width: 60px;
+    height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    transition: ease .5s;
+    background-color: var(--main-button-color);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.come-back-button:hover{
+    top: 0px;
+    left: 0px;
+    border-right: solid 3px white;  
+    border-bottom: solid 3px white;
+
+}
+
+.invalid-input{
+    border-color: red;
+    border-width: 5px;
+    border-style: solid;
 }
