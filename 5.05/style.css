@@ -26,10 +26,11 @@ body{
 }
 
 .head-container{
+    padding: 0;
     position: sticky;
     top: 0;
     box-shadow: 5px 0 15px dimgray;
-    
+    font-weight: normal;
 }
 
 header{
@@ -79,6 +80,7 @@ nav a:hover{
 
 main{
     background-color: rgb(212, 230, 247);
+    margin-bottom: 30px
 }
 
 main header{
@@ -242,8 +244,17 @@ textarea{
     font-variant: small-caps;
 }
 
-.operations input[type='submit']{
+.submit-button{
     background-color: rgb(43, 77, 43);
+}
+
+.error-message{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Courier New';
+    color: red;
+    font-size: 1rem;
+    display: none;
 }
 
 /* .operations input:hover{
@@ -417,5 +428,9 @@ p.description{
 .invalid-input{
     border-color: red;
     border-width: 5px;
+    border-style: solid;
+}
+.valid-input{
+    border-color: rgb(6, 173, 6);
     border-style: solid;
 }
