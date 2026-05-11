@@ -12,7 +12,9 @@
     --main-button-border: solid 1.5px rgb(56, 55, 55);
     --thick-light-border: 5px solid aqua;
     --thin-light-border: 2px solid aqua;
-    --main-box-shadow: 0px 1px 15px rgb(179, 170, 170)
+    --main-box-shadow: 0px 1px 15px rgb(179, 170, 170);
+    --unavailable-bg-color: rgb(177, 177, 177);
+    --unavailable-border-color: rgb(146, 158, 158);
 }
 
 body{
@@ -108,7 +110,6 @@ main header{
     border: var(--thick-light-border);
     box-shadow: var(--main-box-shadow);
 }
-
 .book_product img{
     
     width: 150px;
@@ -121,6 +122,7 @@ main header{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    background-color: var(--article-bg-color);
     box-shadow: var(--main-box-shadow);
     width: 50%;
     border-radius: 15px;
@@ -297,6 +299,7 @@ textarea{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    background-color: var(--article-bg-color);
     width: 100%;
     border-radius: 0 0 15px 15px;
     overflow: wrap;
@@ -346,12 +349,29 @@ p.description{
     width: 800px;
     box-shadow: var(--main-box-shadow);
     border-radius: 10px;
+    
 }
-.store td,th{
+.store td, .store th{
     border: var(--thin-light-border);
-    border-radius: 10px;
+    background-color: var(--article-bg-color);
     height: 2rem;
 }
+
+.store tr:not(:first-child) td:first-child,
+.store tr:not(:first-child) th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.store tr:not(:first-child) td:last-child,
+.store tr:not(:first-child) th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+th.store_header{
+    border-radius: 10px;
+}
+
+
 .store th{
     background-color: var(--header-bg-color);
 }
@@ -379,10 +399,11 @@ p.description{
 .store_operations{
 
     display: flex;
-    justify-content: flex-end;
     width: 800px;
     margin-top: 20px;
+    justify-content: flex-end;
 }
+
 
 /* .updateStoreButton{
     width: 10%;
@@ -433,4 +454,13 @@ p.description{
 .valid-input{
     border-color: rgb(6, 173, 6);
     border-style: solid;
+}
+
+.unavailable{
+    background-color: var(--unavailable-bg-color);
+    border-color: var(--unavailable-border-color);
+}
+td.unavailable{
+    background-color: var(--unavailable-bg-color);
+    border-color: var(--unavailable-border-color);
 }
