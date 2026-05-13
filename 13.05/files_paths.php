@@ -1,0 +1,5 @@
+<?php
+    $imagesDir = "images/";
+
+
+?>
